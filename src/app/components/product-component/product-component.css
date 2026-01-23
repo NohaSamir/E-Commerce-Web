@@ -1,0 +1,4 @@
+/* Selected Product Title should be bold */
+.products .selected-product-title {
+    font-weight: bold;
+}

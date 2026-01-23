@@ -1,0 +1,14 @@
+<div style="margin-top: 50px;">
+    <h2> Products </h2>
+    <ul class="products">
+        @for (product of products(); track $index) {
+        <li [class.selected-product-title]="product === selectedProduct" style="margin-top: 20px;"
+            (click)="onProductSelected(product)" appHighlightPriceyProducts [isPricey]="product.isPricey">
+            {{product.title }}</li>
+        }
+    </ul>
+</div>
+
+<div style="margin-top: 50px;">
+    <app-product-details-component [product]="selectedProduct"></app-product-details-component>
+</div>

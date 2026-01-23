@@ -1,0 +1,51 @@
+<p>Tracker Component!</p>
+
+<div style="display: flex; align-items: center; gap: 20px;">
+
+    <button (click)="increment()">increment</button>
+
+    <p>{{ counter() }} Counter</p>
+
+    <button (click)="decrement()">decrement</button>
+
+</div>
+
+<button (click)="reset()">Reset</button>
+
+<div style="margin-top: 50px;">
+    <h3>Update First Hero:</h3>
+    <h3>Hero Name:</h3>
+    <p>{{ heros[0].name }}</p>
+
+    <input id="nameTv" type="text" placeholder="Enter Hero name" [(ngModel)]="heros[0].name">
+    <h3>Hero Age:</h3>
+    <p>{{ heros[0].age }}</p>
+</div>
+
+<div style="margin-top: 50px;">
+    <h3>Heros</h3>
+    <ul class="heroes">
+        <!-- Deprecated -->
+        <!-- <li *ngFor="let h of heros">
+            {{ h.name }} - {{ h.age }}
+        </li> -->
+
+        @for (h of heros; track $index) {
+
+        <li role="button" (click)="onHeroClick(h)" class="hero-item">
+            {{ h.name }} - {{ h.age }}
+        </li>
+
+        <button [class.selected]="h === selectedHero" (click)="onHeroClick(h)"> {{ h.name }} - {{ h.age }}</button>
+        }
+    </ul>
+    <div>
+        @if (selectedHero) {
+        <h3>Selected Hero Details:</h3>
+        <p>Name: {{ selectedHero.name }}</p>
+        <p>Age: {{ selectedHero.age }}</p>
+        } @else {
+        <p>No hero selected.</p>
+        }
+    </div>
+</div>
