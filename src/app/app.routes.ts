@@ -5,17 +5,17 @@ export const routes: Routes = [
         path: '',
         pathMatch: 'full',
         loadComponent() {
-            return import('./components/home/home')
-            .then(m => m.Home);
+            return import('./components/product-component/product-component')
+            .then(m => m.ProductComponent);
         },
     },
 
     {
-        path: 'products',
+        path: 'tests',
         pathMatch: 'full',
         loadComponent() {
-            return import('./components/product-component/product-component')
-            .then(m => m.ProductComponent);
+           return import('./components/home/home')
+            .then(m => m.Home);
         }
     }
 ];
