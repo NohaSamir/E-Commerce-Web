@@ -1,0 +1,55 @@
+<form class="product-form" [formGroup]="productForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="title">Title</label>
+    <input
+      type="text"
+      id="title"
+      name="title"
+      placeholder="Enter product title"
+      required
+      formControlName="title"
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="description">Description</label>
+    <textarea
+      id="description"
+      name="description"
+      rows="3"
+      placeholder="Enter product description"
+      formControlName="description"
+      required
+    ></textarea>
+  </div>
+
+  <div class="form-group">
+    <label for="price">Price</label>
+    <input
+      type="number"
+      id="price"
+      name="price"
+      placeholder="Enter product price"
+      required
+      formControlName="price"
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="stock">Stock Quantity</label>
+    <input
+      type="number"
+      id="stock"
+      name="stock"
+      placeholder="Enter stock quantity"
+      required
+      formControlName="stockQuantity"
+      step="1"
+      min="0"
+    />
+  </div>
+
+  <button type="submit" [disabled]="productForm.invalid" style="width: 100%">
+    {{ submitButtonTitle }}
+  </button>
+</form>

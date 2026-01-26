@@ -5,41 +5,78 @@ h1 {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 250%;
 }
-h2, h3 {
+
+h2,
+h3 {
   color: #444;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: lighter;
 }
+
 body {
   margin: 2em;
 }
-body, input[type="text"], button {
+
+body,
+input[type="text"],
+button {
   color: #333;
   font-family: Cambria, Georgia, serif;
 }
+
 button {
-  background-color: #eee;
+  background-color: #fe4a21;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  color: black;
   font-size: 1.2rem;
   padding: 1rem;
   margin-right: 1rem;
   margin-bottom: 1rem;
   margin-top: 1rem;
-}
-button:hover {
-  background-color: black;
   color: white;
 }
+
+button:hover {
+  background-color: #fd3b10;
+  color: white;
+}
+
 button:disabled {
   background-color: #eee;
   color: #aaa;
-  cursor: auto;
+  cursor: not-allowed;
 }
 
 /* everywhere else */
 * {
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Small buttons (optional utility class) */
+button.btn-sm {
+  padding: 2px 6px;
+  font-size: 12px;
+}
+
+/* Icon-only buttons (like edit/delete in table) */
+button.icon-btn {
+  display: inline-flex;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 1;
+  padding: 0;
+}
+
+button.icon-btn:hover {
+  color: #fd3b10;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 8px;           /* space between buttons */
+  justify-content: flex-start; /* align to left */
+  align-items: center;        /* vertical alignment */
 }

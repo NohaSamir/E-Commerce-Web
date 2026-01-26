@@ -1,0 +1,29 @@
+.product-admin-container {
+    margin: auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+h2 {
+    color: #3F4F8B;
+    text-align: center;
+    margin-bottom: 60px;
+    font-weight: bold;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ccc;
+}
+
+th {
+    background-color: #3F4F8B;
+    color: white;
+}

@@ -1,13 +1,12 @@
 import { Component, computed, inject, OnInit, signal } from '@angular/core';
-import { ProductService } from '../../services/product-service';
-import { UpperCasePipe } from '@angular/common';
+import { ProductService } from '../../services/product/product-service';
 import { Product } from '../../models/product';
 import { HighlightPriceyProducts } from '../../directives/highlight-pricey-products';
 import { ProductDetailsComponent } from "../product-details-component/product-details-component";
 
 @Component({
   selector: 'app-product-component',
-  imports: [UpperCasePipe, HighlightPriceyProducts, ProductDetailsComponent],
+  imports: [HighlightPriceyProducts, ProductDetailsComponent],
   templateUrl: './product-component.html',
   styleUrl: './product-component.css',
   providers: [ProductService],

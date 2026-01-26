@@ -1,7 +1,7 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet, RouterLinkWithHref } from '@angular/router';
 import { Home } from "./components/home/home";
-import { ProductService } from './services/product-service';
+import { ProductService } from './services/product/product-service';
 
 @Component({
   selector: 'app-root', // Index.html uses <app-root></app-root>
