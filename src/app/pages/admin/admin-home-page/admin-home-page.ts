@@ -1,48 +1,29 @@
 import { Component, inject, OnInit, signal } from '@angular/core';
-import { ProductService } from '../../../services/product/product-service';
-import { Product } from '../../../models/product';
-import { Router } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { ProductsTableComponent } from '../../../components/products-table-component/products-table-component';
+import { LoginFormComponent } from '../../../components/login-form-component/login-form-component';
+import { AuthService } from '../../../services/auth/auth-service';
+import { RegisterationFormComponent } from '../../../components/registeration-form-component/registeration-form-component';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-admin-home-page',
-  imports: [],
+  imports: [ProductsTableComponent, LoginFormComponent, CommonModule, RouterLink],
   templateUrl: './admin-home-page.html',
   styleUrl: './admin-home-page.css',
 })
 export class AdminHomePage implements OnInit {
-  products = signal<Product[]>([]);
-  productService = inject(ProductService);
-  routes = inject(Router);
+  authService = inject(AuthService);
+  username = signal(``);
 
   constructor() {}
 
   ngOnInit(): void {
-    this.fetchProducts();
+    this.username.set(this.authService.getCurrentUsername() || '');
   }
 
-  navigateToEdit(productId: number) {
-    this.routes.navigate(['/edit-product', productId]);
-  }
-
-  navigateToAddProduct() {
-    this.routes.navigate(['/add-product']);
-  }
-
-  deleteProduct(id: number) {
-    this.productService.delete(id).subscribe({
-      next: () => {
-        this.fetchProducts();
-      },
-      error: (err) => {
-        console.error(err);
-        alert('Something went wrong while deleting the product.');
-      },
-    });
-  }
-
-  private fetchProducts() {
-    this.productService.fetchProducts().subscribe((products) => {
-      this.products.set(products);
-    });
+  logout() {
+    this.authService.logout();
+    this.username.set('');
   }
 }

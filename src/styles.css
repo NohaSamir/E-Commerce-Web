@@ -1,29 +1,90 @@
-/* You can add global styles to this file, and also import other style files */
-/* Application-wide Styles */
+/* Global font */
+* {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #333;
+  box-sizing: border-box;
+}
+
+/* Headings */
 h1 {
   color: #369;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 250%;
+  font-size: 2.5rem;
 }
 
 h2,
 h3 {
-  color: #444;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: lighter;
+  color: #3F4F8B;
+  margin-bottom: 60px;
+  font-weight: bold;
 }
 
-body {
-  margin: 2em;
+
+
+/* Forms */
+form {
+  margin: 30px auto;
+  padding: 20px;
+  border-radius: 12px;
+  background-color: #f5f5f5;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-body,
-input[type="text"],
-button {
+form button {
+  width: 100%;
+  margin: 1rem 0;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #555;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: border-color 0.2s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #b11212;
+  outline: none;
+}
+
+
+form h3 {
+  text-align: center;
+  margin-bottom: 20px;
   color: #333;
-  font-family: Cambria, Georgia, serif;
 }
 
+/* Inputs and Textareas */
+input,
+textarea {
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: border-color 0.2s;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #b11212;
+  outline: none;
+}
+
+/* Buttons */
 button {
   background-color: #fe4a21;
   border: none;
@@ -31,15 +92,12 @@ button {
   cursor: pointer;
   font-size: 1.2rem;
   padding: 1rem;
-  margin-right: 1rem;
-  margin-bottom: 1rem;
-  margin-top: 1rem;
+  margin: 1rem 1rem 1rem 0;
   color: white;
 }
 
 button:hover {
   background-color: #fd3b10;
-  color: white;
 }
 
 button:disabled {
@@ -48,18 +106,13 @@ button:disabled {
   cursor: not-allowed;
 }
 
-/* everywhere else */
-* {
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-/* Small buttons (optional utility class) */
+/* Optional small button */
 button.btn-sm {
   padding: 2px 6px;
   font-size: 12px;
 }
 
-/* Icon-only buttons (like edit/delete in table) */
+/* Icon-only buttons */
 button.icon-btn {
   display: inline-flex;
   background: none;
@@ -74,9 +127,61 @@ button.icon-btn:hover {
   color: #fd3b10;
 }
 
+/* Action buttons container */
 .action-buttons {
   display: flex;
-  gap: 8px;           /* space between buttons */
-  justify-content: flex-start; /* align to left */
-  align-items: center;        /* vertical alignment */
+  gap: 8px;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.error-message {
+  color: red !important;
+  font-size: 0.9rem;
+  margin-top: 4px;
+}
+
+.flex-container {
+    display: flex;
+    width: 100%; 
+    margin: 0;
+    padding: 0;
+}
+
+.left-panel {
+    width: 20%; /* Panel takes 40% of the container's width */
+    min-height: 100vh; /* Minimum full viewport height */
+    background: linear-gradient(135deg, #253057, #40508C, #4F609D); 
+    /* Gradient background from dark blue (#253057) → medium (#40508C) → lighter (#4F609D) at 135 degrees */
+    
+    color: white; /* Text inside will be white */
+    
+    padding: 20px; /* Space inside the panel (top, right, bottom, left) */
+    margin: 0;
+    
+    display: flex; /* Enable flexbox layout for children */
+    flex-direction: column; /* Stack child elements vertically */
+    box-sizing: border-box; /* include padding in width/height */
+}
+
+.wide.left-panel {
+    width: 40%;
+    /* Panel takes 40% of the container's width */
+    padding: 40px;
+    /* Space inside the panel (top, right, bottom, left) */
+    justify-content: center;
+    /* Center vertically */
+    align-items: center;
+    /* Center horizontally */
+}
+
+.left-panel * {
+  color: inherit;
+}
+
+.right-panel {
+    flex: 1; /* Take up remaining space */
+    padding: 40px; /* Space inside the panel */
+    background-color: #f9f9f9; /* Light background for contrast */
+    box-sizing: border-box; /* include padding in width/height */
 }

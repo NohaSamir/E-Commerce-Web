@@ -1,4 +1,4 @@
-<form class="product-form" [formGroup]="productForm" (ngSubmit)="onSubmit()">
+<form [formGroup]="productForm" (ngSubmit)="onSubmit()">
   <div class="form-group">
     <label for="title">Title</label>
     <input
@@ -49,7 +49,7 @@
     />
   </div>
 
-  <button type="submit" [disabled]="productForm.invalid" style="width: 100%">
+  <button type="submit" [disabled]="productForm.invalid">
     {{ submitButtonTitle }}
   </button>
 </form>
