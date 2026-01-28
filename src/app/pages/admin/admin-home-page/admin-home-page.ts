@@ -1,14 +1,12 @@
 import { Component, inject, OnInit, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ProductsTableComponent } from '../../../components/products-table-component/products-table-component';
-import { LoginFormComponent } from '../../../components/login-form-component/login-form-component';
-import { AuthService } from '../../../services/auth/auth-service';
-import { RegisterationFormComponent } from '../../../components/registeration-form-component/registeration-form-component';
 import { RouterLink } from '@angular/router';
+import { ProductsTableComponent } from '../../../components/products-table-component/products-table-component';
+import { AuthService } from '../../../services/auth/auth-service';
 
 @Component({
   selector: 'app-admin-home-page',
-  imports: [ProductsTableComponent, LoginFormComponent, CommonModule, RouterLink],
+  imports: [ProductsTableComponent, CommonModule, RouterLink],
   templateUrl: './admin-home-page.html',
   styleUrl: './admin-home-page.css',
 })

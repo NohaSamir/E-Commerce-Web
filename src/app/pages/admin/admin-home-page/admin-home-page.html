@@ -1,21 +1,15 @@
-@if (authService.isLoggedIn$ | async) {
-  <div class="flex-container">
-    <div class="left-panel">
-      <h2>{{ username() }}</h2>
-      <nav>
-        <ul>
-          <li><a routerLink="/admin">Products</a></li>
-          <!-- <li><a routerLink="/admin/orders">Orders</a></li>
-          <li><a routerLink="/admin/users">Users</a></li> -->
-          <li><a (click)="logout()">Logout</a></li>
-        </ul>
-      </nav>
-    </div>
-
-    <div class="right-panel">
-      <app-products-table-component></app-products-table-component>
-    </div>
+<div class="flex-container">
+  <div class="left-panel">
+    <h2>{{ username() }}</h2>
+    <nav>
+      <ul>
+        <li><a routerLink="/home">Products</a></li>
+        <li><a (click)="logout()">Logout</a></li>
+      </ul>
+    </nav>
   </div>
-} @else {
-  <app-login-form-component></app-login-form-component>
-}
+
+  <div class="right-panel">
+    <app-products-table-component></app-products-table-component>
+  </div>
+</div>

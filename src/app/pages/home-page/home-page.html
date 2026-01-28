@@ -1,0 +1,10 @@
+@if (showLogin()) {
+  <app-login-form-component></app-login-form-component>
+} @else {
+  @if (showAdmin()) {
+    <app-admin-home-page></app-admin-home-page>
+  } @else {
+    <p>Welcome to the Home Page!</p>
+    <button (click)="logout()">Logout</button>
+  }
+}
