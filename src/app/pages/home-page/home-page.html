@@ -1,10 +1,9 @@
-@if (showLogin()) {
-  <app-login-form-component></app-login-form-component>
+@if (showGuestHomePage()) {
+  <app-guest-home-page></app-guest-home-page>
 } @else {
-  @if (showAdmin()) {
+  @if (showAdminHomePage()) {
     <app-admin-home-page></app-admin-home-page>
   } @else {
-    <p>Welcome to the Home Page!</p>
-    <button (click)="logout()">Logout</button>
+    <app-customer-home-page></app-customer-home-page>
   }
 }

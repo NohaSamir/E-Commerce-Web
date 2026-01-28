@@ -1,0 +1,16 @@
+<div class="flex-container">
+  <div class="left-panel">
+    <nav>
+      <ul>
+        <li><a routerLink="/home">Products</a></li>
+        <li><a routerLink="/home">Orders</a></li>
+        <li><a routerLink="/home">Cart</a></li>
+        <li><a (click)="logout()">Logout</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="right-panel">
+    <app-products-grid-component></app-products-grid-component>
+  </div>
+</div>
